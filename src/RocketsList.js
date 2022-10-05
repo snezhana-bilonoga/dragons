@@ -13,8 +13,7 @@ function RocketsList() {
 
     useEffect(() => {
         dispatch(getRockets());
-        console.log(user);
-    }, [dispatch, user]);
+    }, [dispatch]);
 
 
    
