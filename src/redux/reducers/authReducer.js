@@ -1,37 +1,33 @@
 import { SET_USER, REMOVE_USER } from '../types';
 
 const initialState = {
-    name: null,
-    phone: null,
-    email: null,
-    token: null,
-    id: null,
+  name: null,
+  email: null,
+  lastSignInTime: null,
+  creationTime: null,
+  token: null,
+  id: null,
 };
 
 export const authReducer = (state = initialState, action) => {
+  switch (action.type) {
+  case SET_USER:
+    return {
+      ...state,
+      ...action.data,
+    };
 
-    switch(action.type) {
+  case REMOVE_USER:
+    return {
+      ...state,
+      name: null,
+      email: null,
+      lastSignInTime: null,
+      token: null,
+      id: null,
+    };
 
-        case SET_USER:
-            return {
-                ...state,
-                name: action.data.name,
-                phone: action.data.phone,
-                email: action.data.email,
-                token: action.data.token,
-                id: action.data.id,
-            } 
-
-        case REMOVE_USER :
-            return {
-                ...state,
-                name: null,
-                phone: null,
-                email: null,
-                token: null,
-                id: null,
-            }
-    
-        default: return state;  
-    }
-}
+  default:
+    return state;
+  }
+};

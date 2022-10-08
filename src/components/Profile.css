@@ -1,0 +1,53 @@
+.profile-page {
+  display: grid;
+  margin-top: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 100px);
+}
+
+.edit-profile input {
+  width: 600px;
+  height: 30px;
+  margin-top: 10px;
+  text-indent: 10px;
+}
+
+.my-profile p {
+  margin-top: 10px;
+  margin-left: 30px;
+  text-align: left;
+}
+
+.my-profile button {
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid gray;
+  border-radius: 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 200;
+  color: #524f4e;
+  background: white;
+  width: 90px;
+  height: 30px;
+  margin-top: 35px;
+}
+
+.edit-profile button {
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid gray;
+  border-radius: 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 200;
+  color: #524f4e;
+  background: white;
+  width: 90px;
+  height: 30px;
+  margin-top: 20px;
+}
