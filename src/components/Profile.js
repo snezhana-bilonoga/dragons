@@ -34,6 +34,12 @@ function Profile () {
       }
 
       dispatch(setUser(newUser));
+
+      setName('');
+      setEmail('');
+      setPassword('');
+
+      alert('User info is updated.');
     } catch (error) {
       alert(error);
     }

@@ -1,5 +1,4 @@
 import {
-  GET_ROCKET,
   GET_ROCKETS,
   LOADER_DISPLAY_ON,
   LOADER_DISPLAY_OFF,
@@ -7,9 +6,9 @@ import {
   REMOVE_USER,
   ADD_ROCKET_TO_FAVORITE,
   REMOVE_ROCKET_FROM_FAVORITE,
+  REMOVE_FAVORITES,
 } from './types';
 
-const rocketDetailsUrl = 'https://api.spacexdata.com/v4/dragons/5e9d058759b1ff74a7ad5f8f';
 const rocketsUrl = 'https://api.spacexdata.com/v4/dragons';
 
 export function loaderOn () {
@@ -33,22 +32,6 @@ export function getRockets () {
 
     dispatch({
       type: GET_ROCKETS,
-      data: jsonData,
-    });
-
-    dispatch(loaderOff());
-  };
-}
-
-export function getRocket () {
-  return async dispatch => {
-    dispatch(loaderOn());
-
-    const response = await fetch(rocketDetailsUrl);
-    const jsonData = await response.json();
-
-    dispatch({
-      type: GET_ROCKET,
       data: jsonData,
     });
 
@@ -84,5 +67,12 @@ export function removeFromFavorite (rocketData) {
     dispatch({
       type: REMOVE_ROCKET_FROM_FAVORITE,
       data: rocketData,
+    });
+}
+
+export function removeFavorites () {
+  return async dispatch =>
+    dispatch({
+      type: REMOVE_FAVORITES,
     });
 }

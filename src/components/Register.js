@@ -57,7 +57,7 @@ const Registration = () => {
           onChange={e => setPass(e.target.value)}
           placeholder='Password'
         />
-        <button onClick={() => handleRegister(email, pass, name)}>Sign In</button>
+        <button onClick={() => handleRegister(email, pass, name)}>Register</button>
       </div>
       <p>
         Already have an account? <Link to='/login'>Sign in</Link>

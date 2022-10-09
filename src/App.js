@@ -7,6 +7,7 @@ import Login from './components/Login';
 import Registration from './components/Register';
 import Profile from './components/Profile';
 import Favorites from './components/Favorites';
+import './fireBase';
 import './App.css';
 
 function App () {

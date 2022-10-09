@@ -1,4 +1,4 @@
-import { ADD_ROCKET_TO_FAVORITE, REMOVE_ROCKET_FROM_FAVORITE } from '../types';
+import { ADD_ROCKET_TO_FAVORITE, REMOVE_FAVORITES, REMOVE_ROCKET_FROM_FAVORITE } from '../types';
 
 const initialState = {
   favorites: [],
@@ -15,6 +15,11 @@ export const favoritesReducer = (state = initialState, action) => {
     return {
       ...state,
       favorites: [...state.favorites.filter(rocket => rocket.id !== action.data.id)],
+    };
+  case REMOVE_FAVORITES:
+    return {
+      ...state,
+      favorites: [],
     };
 
   default:

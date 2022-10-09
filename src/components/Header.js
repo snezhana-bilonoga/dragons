@@ -1,12 +1,17 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { removeUser } from '../redux/actions';
+import { removeFavorites, removeUser } from '../redux/actions';
 import './Header.css';
 
 function Header () {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  function handlgeLogout() {
+    dispatch(removeUser());
+    dispatch(removeFavorites());
+  }
 
   return (
     <>
@@ -18,11 +23,9 @@ function Header () {
           My Profile
         </button>
         <button onClick={() => navigate('/favorites')} className='favorite'>
-          {' '}
           Favorites
         </button>
-        <button className='log-out' onClick={() => dispatch(removeUser())}>
-          {' '}
+        <button className='log-out' onClick={handlgeLogout}>
           Log Out
         </button>
       </header>
