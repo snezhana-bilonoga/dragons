@@ -11,6 +11,7 @@ function Header () {
   function handlgeLogout() {
     dispatch(removeUser());
     dispatch(removeFavorites());
+    navigate('/');
   }
 
   return (
